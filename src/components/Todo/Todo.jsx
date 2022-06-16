@@ -1,10 +1,10 @@
 import React from "react";
 
-const Todo = ({todo, setTodo, addTodo}) => {
+const Todo = ({todo}) => {
   return (
     <div>
-      <label>
-        <input type="checkbox" checked={todo.complete} />
+      <label htmlFor="">
+        <input type="checkbox" checked={todo} />
         {todo.name}
       </label>
     </div>

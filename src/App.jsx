@@ -1,18 +1,17 @@
-import {useState} from "react";
-import "./App.scss";
-import Todo from "./components/Todo/Todo";
+import React, {useState} from "react";
 import TodoList from "./components/TodoList/TodoList";
 
 const App = () => {
   const [todos, setTodos] = useState([]);
-  const [todo, setTodo] = useState("");
+
+  const handleAddTodo = () => {};
 
   return (
     <>
-      <TodoList />
+      <TodoList todos={todos} />
       <input type="text" />
-      <button>Add todo</button>
-      <button>clear</button>
+      <button onClick={handleAddTodo}>Add Todo</button>
+      <button>Clear Complete</button>
     </>
   );
 };

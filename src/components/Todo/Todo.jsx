@@ -1,12 +1,20 @@
 import React from "react";
 
-const Todo = ({todo}) => {
+const Todo = ({todo, setTodo, addTodo}) => {
   return (
-    <div>
-      <label htmlFor="">
-        <input type="checkbox" checked={todo.complete} />
-        {todo.name}
-      </label>
+    <div className="input-wrapper">
+      <input
+        type="text"
+        name="todo"
+        value={todo}
+        placeholder="Add your task here"
+        onChange={(e) => {
+          setTodo(e.target.value);
+        }}
+      />
+      <button className="add-button" onClick={addTodo}>
+        Add
+      </button>
     </div>
   );
 };

@@ -1,12 +1,19 @@
 import React from "react";
-import Todo from "../Todo/Todo";
 
-const TodoList = ({todos}) => {
+const TodoList = ({todos, deleteTodo}) => {
   return (
     <div>
-      {todos.map((todo) => {
-        return <Todo key={todo.id} todo={todo} />;
-      })}
+      <ul className="todo-list">
+        {todos.map((todo, index) => (
+          <div className="todo">
+            <li key={index}> {todo} </li>
+
+            <button className="delete-button" onClick={deleteTodo}>
+              Delete
+            </button>
+          </div>
+        ))}
+      </ul>
     </div>
   );
 };
